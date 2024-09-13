@@ -1,0 +1,521 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+body {
+  overflow: hidden;
+}
+
+.main_header {
+  padding: 20px;
+  background-color: #192a56;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main_header h1 {
+  text-align: center;
+  color: white;
+}
+
+main {
+  height: calc(100vh - 90px);
+}
+main > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - 90px);
+}
+main > .container > .left {
+  width: 30%;
+  height: 100%;
+  background-color: #192a56;
+  border-top: 1px solid rgba(43, 157, 255, 0.3490196078);
+  border-right: 1px solid rgba(255, 255, 255, 0.431372549);
+}
+main > .container > .left header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #192a56;
+  border-bottom: 1px solid rgba(43, 157, 255, 0.3490196078);
+}
+main > .container > .left header input {
+  border: 0;
+  width: 60%;
+  border-radius: 12px;
+  height: 25px;
+  padding-left: 15px;
+  background-color: #2148ab;
+  color: white;
+}
+main > .container > .left header input::-webkit-input-placeholder {
+  color: white;
+}
+main > .container > .left header input::-moz-placeholder {
+  color: white;
+}
+main > .container > .left header input:-ms-input-placeholder {
+  color: white;
+}
+main > .container > .left header input::-ms-input-placeholder {
+  color: white;
+}
+main > .container > .left header input::placeholder {
+  color: white;
+}
+main > .container > .left header input:focus-visible {
+  outline: none;
+}
+main > .container > .left .friends {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+  height: calc(100vh - 156px);
+}
+main > .container > .left .friends .friend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  background-color: #193479;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+main > .container > .left .friends .friend:not(:last-of-type) {
+  border-bottom: 1px solid #7c869f;
+}
+main > .container > .left .friends .friend:hover {
+  background-color: #1f3369;
+}
+main > .container > .left .friends .friend img {
+  height: 50px;
+  border-radius: 50%;
+}
+main > .container > .left .friends .friend .cont .name {
+  font-weight: 500;
+  color: white;
+}
+main > .container > .left .friends .friend .cont .last-message {
+  color: white;
+}
+main > .container > .left .friends .friend .last-message {
+  font-family: system-ui;
+  font-size: 13px;
+}
+main > .container > .right {
+  width: 70%;
+  height: 100%;
+  position: relative;
+  background-color: #192a56;
+  border-top: 1px solid rgba(43, 157, 255, 0.3490196078);
+}
+main > .container > .right header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background-color: #193479;
+}
+main > .container > .right header .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main > .container > .right header .left img {
+  margin-right: 20px;
+  height: 50px;
+}
+main > .container > .right header .left .cont h1 {
+  color: wheat;
+}
+main > .container > .right .chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  overflow: auto;
+  height: calc(100% - 220px);
+  scrollbar-color: rgba(var(--white-rgb), 0.16) transparent;
+}
+main > .container > .right .chat .friend_message {
+  position: relative;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  background-color: #9193a5;
+  border-radius: 5px;
+  min-width: 70px;
+}
+main > .container > .right .chat .friend_message::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  clip-path: polygon(0 0, 22% 13%, 22% 0);
+  width: 80px;
+  height: 80px;
+  background-color: #9193a5;
+}
+main > .container > .right .chat .friend_message .cont {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+}
+main > .container > .right .chat .friend_message .cont h3 {
+  text-align: right;
+}
+main > .container > .right .chat .my_message {
+  position: relative;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  background-color: #008b8b;
+  border-radius: 5px;
+  min-width: 70px;
+}
+main > .container > .right .chat .my_message::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  clip-path: polygon(100% 0, 78% 13%, 78% 0);
+  width: 80px;
+  height: 80px;
+  background-color: #008b8b;
+}
+main > .container > .right .chat .my_message .cont {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: left;
+}
+main > .container > .right .send_message {
+  width: inherit;
+}
+main > .container > .right .send_message form {
+  position: fixed;
+  bottom: 0;
+  right: 0px;
+  background-color: #193479;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  gap: 35px;
+}
+main > .container > .right .send_message form input[type=text] {
+  border: 0;
+  width: 60%;
+  border-radius: 8px;
+  height: 35px;
+  padding-left: 15px;
+  background-color: #2148ab;
+  color: white;
+}
+main > .container > .right .send_message form input[type=text]::-webkit-input-placeholder {
+  color: white;
+}
+main > .container > .right .send_message form input[type=text]::-moz-placeholder {
+  color: white;
+}
+main > .container > .right .send_message form input[type=text]:-ms-input-placeholder {
+  color: white;
+}
+main > .container > .right .send_message form input[type=text]::-ms-input-placeholder {
+  color: white;
+}
+main > .container > .right .send_message form input[type=text]::placeholder {
+  color: white;
+}
+main > .container > .right .send_message form input[type=text]:focus-visible {
+  outline: none;
+}
+main > .container > .right .send_message form input[type=image] {
+  height: 30px;
+  padding: 10px;
+  background-color: #001343;
+  border-radius: 50%;
+  cursor: pointer;
+}
+main > .container .before_login {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 90px);
+  background-color: #193479;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+main > .container .before_login > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 25px;
+  padding: 20px;
+  background-color: #224db9;
+  border-radius: 10px;
+}
+main > .container .before_login > .container .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main > .container .before_login > .container .box.register {
+  display: none;
+}
+main > .container .before_login > .container .box form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+main > .container .before_login > .container .box form h1 {
+  color: white;
+}
+main > .container .before_login > .container .box form .cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+}
+main > .container .before_login > .container .box form .cont input, main > .container .before_login > .container .box form .cont select {
+  border: 0;
+  font-size: 20px;
+  border-radius: 8px;
+  height: 50px;
+  padding-left: 15px;
+  background-color: #1296d1;
+  color: white;
+  width: calc(100% - 15px);
+}
+main > .container .before_login > .container .box form .cont input::-webkit-input-placeholder, main > .container .before_login > .container .box form .cont select::-webkit-input-placeholder {
+  color: white;
+  font-size: 17px;
+}
+main > .container .before_login > .container .box form .cont input::-moz-placeholder, main > .container .before_login > .container .box form .cont select::-moz-placeholder {
+  color: white;
+  font-size: 17px;
+}
+main > .container .before_login > .container .box form .cont input:-ms-input-placeholder, main > .container .before_login > .container .box form .cont select:-ms-input-placeholder {
+  color: white;
+  font-size: 17px;
+}
+main > .container .before_login > .container .box form .cont input::-ms-input-placeholder, main > .container .before_login > .container .box form .cont select::-ms-input-placeholder {
+  color: white;
+  font-size: 17px;
+}
+main > .container .before_login > .container .box form .cont input::placeholder, main > .container .before_login > .container .box form .cont select::placeholder {
+  color: white;
+  font-size: 17px;
+}
+main > .container .before_login > .container .box form .cont input:focus-visible, main > .container .before_login > .container .box form .cont select:focus-visible {
+  outline: none;
+}
+main > .container .before_login > .container .box form .cont input.gender, main > .container .before_login > .container .box form .cont select.gender {
+  cursor: pointer;
+}
+main > .container .before_login > .container .box form .cont select {
+  width: 100%;
+}
+main > .container .before_login > .container .box form .cont .container {
+  position: relative;
+}
+main > .container .before_login > .container .box form .cont .container img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
+}
+main > .container .before_login > .container .box .alarm {
+  display: none;
+  padding: 4px;
+  background-color: white;
+  border-radius: 5px;
+}
+main > .container .before_login > .container .box .alarm.open {
+  display: block;
+  background: #f29999;
+}
+main > .container .before_login > .container button {
+  border: navajowhite;
+  padding: 10px;
+  border-radius: 5px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  background-color: #17d308;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+main > .container .before_login > .container button.Register {
+  background-color: rgba(240, 248, 255, 0.8196078431);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main > .container .logout {
+  position: absolute;
+  top: 25px;
+  left: 44px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #2148ab;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .main_header {
+    padding: 5px;
+  }
+  main {
+    height: calc(100% - 60px);
+  }
+  main > .container {
+    height: calc(100% - 60px);
+  }
+  main > .container .before_login {
+    height: calc(100% - 60px);
+  }
+  main > .container .before_login > .container {
+    gap: 20px;
+  }
+  main > .container .before_login > .container .box form {
+    gap: 10px;
+  }
+  main > .container .before_login > .container .box form .cont {
+    width: unset;
+  }
+  main > .container .before_login > .container .box form .cont input, main > .container .before_login > .container .box form .cont select {
+    font-size: unset;
+    height: unset;
+    padding: 13px 40px 13px 7px;
+    width: unset;
+  }
+  main > .container .before_login > .container .box form .cont input::-webkit-input-placeholder, main > .container .before_login > .container .box form .cont select::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+  main > .container .before_login > .container .box form .cont input::-moz-placeholder, main > .container .before_login > .container .box form .cont select::-moz-placeholder {
+    font-size: 15px;
+  }
+  main > .container .before_login > .container .box form .cont input:-ms-input-placeholder, main > .container .before_login > .container .box form .cont select:-ms-input-placeholder {
+    font-size: 15px;
+  }
+  main > .container .before_login > .container .box form .cont input::-ms-input-placeholder, main > .container .before_login > .container .box form .cont select::-ms-input-placeholder {
+    font-size: 15px;
+  }
+  main > .container .before_login > .container .box form .cont input::placeholder, main > .container .before_login > .container .box form .cont select::placeholder {
+    font-size: 15px;
+  }
+  main > .container .before_login > .container .box form .cont .container img {
+    width: 25px;
+    height: 25px;
+  }
+  main > .container .before_login > .container button {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <title>Chat App</title>
+</head>
+<body>
+    <header class="main_header">
+        <h1>Chat App</h1>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="left">
+                <header>
+                    <input placeholder="search..." type="text">
+                </header>
+                <div class="friends">
+                </div>
+            </div>
+            <div class="right">
+
+            </div>
+            <div class="before_login">
+                <div class="container">
+
+                    <div class="box logIn">
+                        <h1>Login</h1>
+                        <form onsubmit="return false;">
+                            <div class="cont">
+                                <input type="text" class="name" placeholder="User name or phone number..." required>
+                                <div class="container">
+                                    <input type="password" class="password" placeholder="password ..." required>
+                                    <img src="assets/imgs/hide.png" alt="hide">
+                                </div>
+                                <div class="alarm"><h3>User name or Password are incorrect</h3></div>
+                            </div>
+                            <button type="submit" class="login_button">Login</button>
+                        </form>
+                    </div>
+
+                    <div class="box register">
+                        <h1>Register</h1>
+                        <form onsubmit="return false;">
+                            <div class="cont">
+                                <input type="text" class="name" placeholder="User name or phone number..." required>
+                                <div class="alarm userName"><h3>User Name Already Taken</h3></div>
+                                <div class="container">
+                                    <input type="password" minlength="3" class="password" placeholder="password ..." required>
+                                    <img src="assets/imgs/hide.png" alt="hide">
+                                </div>
+                                <div class="container">
+                                    <input type="password" minlength="3" class="confirm_password" placeholder="confirm password ..." required>
+                                    <img src="assets/imgs/hide.png" alt="hide">
+                                </div>
+                                <div class="alarm password"><h3>Password not match</h3></div>
+                                <select name="gender" class="gender" required>
+                                    <option value="" disabled="" selected="" hidden="">gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="register_button">Signup</button>
+                        </form>
+                    </div>
+                    <button class="Register">Register</button>
+
+                </div>
+            </div>
+            <button class="logout">logout</button>
+        </div>
+    </main>
+    
+
+
+<script src="assets/module.js" type="module"></script>
+<!-- <script src="assets/main.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+body {
+    overflow: hidden;
+}
+
+:root{
+    // --alarm: rgb(242, 153, 153);
+}
+
+.main_header{
+    padding: 20px;
+    background-color: #192a56;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & h1{
+        text-align: center;
+        color: white;
+    }
+}
+
+main{
+    height: calc(100vh - 90px);
+    & > .container{
+        display: flex;
+        height: calc(100vh - 90px);
+        & > .left{
+            width: 30%;
+            height: 100%;
+            background-color: #192a56;
+            border-top: 1px solid #2b9dff59;
+            border-right: 1px solid #ffffff6e;
+            & header{
+                display: flex;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+                background-color: #192a56;
+                border-bottom: 1px solid rgba(43, 157, 255, 0.3490196078);
+                & input{
+                    border: 0;
+                    width: 60%;
+                    border-radius: 12px;
+                    height: 25px;
+                    padding-left: 15px;
+                    background-color: #2148ab;
+                    color: white;
+                    &::placeholder{
+                        color: white;
+                    }
+                    &:focus-visible{
+                        outline: none;
+                    }
+                }
+            }
+            & .friends{
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                height: calc(100vh - (65px + 91px));
+                & .friend{
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    background-color: #193479;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: 0.1s;
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid #7c869f;
+                    }
+                    &:hover{
+                        background-color: #1f3369;
+                    }
+                    & img{
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                    & .cont{
+                        & .name{
+                            font-weight: 500;
+                            color: white;
+                        }
+                        & .last-message{
+                            color: white;
+                        }
+                    }
+                    & .last-message{
+                        font-family: system-ui;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        & > .right{
+            width: 70%;
+            height: 100%;
+            position: relative;
+            background-color: #192a56;
+            border-top: 1px solid #2b9dff59;
+            & header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                background-color: #193479;
+                & .left{
+                    display: flex;
+                    align-items: center;
+                    & img{
+                        margin-right: 20px;
+                        height: 50px;
+                    }
+                    & .cont{
+                        & h1{
+                            color: wheat;
+                        }
+                    }
+                }
+            }
+            & .chat{
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                overflow: auto;
+                height: calc(100% - 220px);
+                scrollbar-color: rgba(var(--white-rgb), .16) transparent;
+                & .friend_message{
+                    position: relative;
+                    align-self: flex-start;
+                    width: fit-content;
+                    padding: 10px;
+                    background-color: #9193a5;
+                    border-radius: 5px;
+                    min-width: 70px;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -13px;
+                        display: flex;
+                        clip-path: polygon(0 0, 22% 13%, 22% 0);
+                        width: 80px;
+                        height: 80px;
+                        background-color: #9193a5;
+                    }
+                    & .cont{
+                        width: fit-content;
+                        float: right;
+                        & h3{
+                            text-align: right;
+                        }
+                    }
+                }
+                & .my_message{
+                    position: relative;
+                    align-self: flex-end;
+                    width: fit-content;
+                    padding: 10px;
+                    background-color: #008b8b;
+                    border-radius: 5px;
+                    min-width: 70px;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: -13px;
+                        display: flex;
+                        clip-path: polygon(100% 0, 78% 13%, 78% 0);
+                        width: 80px;
+                        height: 80px;
+                        background-color: #008b8b;
+                    }
+                    & .cont{
+                        width: fit-content;
+                        float: left;
+                    }
+                }
+            }
+            & .send_message{
+                width: inherit;
+                & form{
+                    position: fixed;
+                    bottom: 0;
+                    right: 0px;
+                    background-color: #193479;
+                    width: inherit;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px 0;
+                    gap: 35px;
+                    & input[type="text"]{
+                        border: 0;
+                        width: 60%;
+                        border-radius: 8px;
+                        height: 35px;
+                        padding-left: 15px;
+                        background-color: #2148ab;
+                        color: white;
+                        &::placeholder{
+                            color: white;
+                        }
+                        &:focus-visible{
+                            outline: none;
+                        }
+                    }
+                    & input[type="image"]{
+                        height: 30px;
+                        padding: 10px;
+                        background-color: #001343;
+                        border-radius: 50%;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        & .before_login{
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 90px);
+            background-color: #193479;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > .container{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                height: fit-content;
+                gap: 25px;
+                padding: 20px;
+                background-color: #224db9;
+                border-radius: 10px;
+                & .box{
+                    display: flex;
+                    gap: 25px;
+                    flex-direction: column;
+                    &.register{
+                        display: none;
+                    }
+                    & form{
+                        display: flex;
+                        gap: 25px;
+                        flex-direction: column;
+                        & h1{
+                            color: white;
+                        }
+                        & .cont{
+                            display: flex;
+                            align-items: stretch;
+                            gap: 5px;
+                            flex-direction: column;
+                            width: 300px;
+                            & input, & select{
+                                border: 0;
+                                font-size: 20px;
+                                border-radius: 8px;
+                                height: 50px;
+                                padding-left: 15px;
+                                background-color: #1296d1;
+                                color: white;
+                                width: calc(100% - 15px);
+                                &::placeholder{
+                                    color: white;
+                                    font-size: 17px;
+                                }
+                                &:focus-visible{
+                                    outline: none;
+                                }
+                                &.gender{
+                                    cursor: pointer;
+                                }
+                            }
+                            & select{
+                                width: 100%;
+                            }
+                            & .container{
+                                position: relative;
+                                & img {
+                                    width: 30px;
+                                    height: 30px;
+                                    position: absolute;
+                                    transform: translate(0, -50%);
+                                    right: 10px;
+                                    top: 50%;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    & .alarm{
+                        display: none;
+                        padding: 4px;
+                        background-color: white;
+                        border-radius: 5px;
+                        &.open{
+                            display: block;
+                            background: #f29999;
+                        }
+                    }
+                }
+                & button{
+                    border: navajowhite;
+                    padding: 10px;
+                    border-radius: 5px;
+                    align-self: flex-start;
+                    background-color: #17d308;
+                    font-size: 20px;
+                    width: 100%;
+                    cursor: pointer;
+                    &.Register{
+                        background-color: #f0f8ffd1;
+                        width: fit-content;                    
+                    }
+                }
+            }
+        }
+
+        & .logout{
+            position: absolute;
+            top: 25px;
+            left: 44px;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #2148ab;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .main_header {
+        padding: 5px;
+    }
+    main{
+        height: calc(100% - 60px);
+        & > .container {
+            height: calc(100% - 60px);
+            & .before_login {
+                height: calc(100% - 60px);
+                & > .container {
+                    gap: 20px;
+                    & .box form{
+                        gap: 10px;
+                        & .cont {
+                            width: unset;
+                            & input , & select{
+                                font-size: unset;
+                                height: unset;
+                                padding: 13px 10px;
+                                &::placeholder{
+                                    font-size: 15px;
+                                }
+                            }
+                            & .container img{
+                                width: 25px;
+                                height: 25px;                            
+                            }
+                        }
+                    } 
+                    & button{
+                        font-size: 15px;              
+                    }
+                }
+            } 
+        }
+    } 
+}
